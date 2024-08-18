@@ -1,4 +1,5 @@
 WITH
+## Calculate and rank the recency
 recently AS (
     SELECT *
       ,CASE WHEN prc_rn_r BETWEEN 0 AND 0.2 THEN 5
@@ -14,7 +15,8 @@ FROM (
         SELECT  CustomerID, MAX(OrderDate) AS Recently_order
         FROM `adventureworks2019.Sales.SalesOrderHeader`
         GROUP BY CustomerID)))
-
+    
+## Calculate and rank the frequency
 ,frequency AS (
     SELECT *,
       CASE WHEN prc_rn_f BETWEEN 0 AND 0.2 THEN 5
@@ -31,6 +33,7 @@ FROM (
             FROM `adventureworks2019.Sales.SalesOrderHeader`
             GROUP BY CustomerID)))
 
+## Calculate and rank the moneytary
 ,moneytary AS (
     SELECT *,
       CASE WHEN prc_rn_m BETWEEN 0 AND 0.2 THEN 5
@@ -47,7 +50,7 @@ FROM (
         FROM `adventureworks2019.Sales.SalesOrderHeader`
         GROUP BY CustomerID)))
 
-        
+## Megre each point to a string point     
 SELECT *
         ,CASE WHEN Segment_code IN (555, 554, 544, 545, 454, 455, 445) THEN "Champions"
                 WHEN Segment_code IN (543, 444, 435, 355, 354, 345, 344, 335) THEN "Loyal Customers"
