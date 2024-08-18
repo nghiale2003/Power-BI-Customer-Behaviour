@@ -17,6 +17,7 @@ By classifying customer segments based on RFM analysis, then state the  common c
 ## 2. Identify and describe common characteristics for each customer segment derived from the RFM analysis.
 Then i use Design Thinking skill to find key metrics, layout and visualization by Power BI
 ![image](https://github.com/user-attachments/assets/ff9b8981-45ef-4aed-bccd-18f7641d5cc2)
+
 ![image](https://github.com/user-attachments/assets/ed0ed5a9-6928-43bf-af6d-c36dbef9d406)
 
 
